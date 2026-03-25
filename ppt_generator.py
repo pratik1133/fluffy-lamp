@@ -1083,6 +1083,13 @@ class PPTGenerator:
             ('company_insider', self.parse_markdown_to_text(data.get('company_insider', '')), 11),
             ('cs_company_insider', self.parse_markdown_to_text(data.get('cs_company_insider', data.get('company_insider', ''))), 10),
 
+            # === New Sections ===
+            ('cs_investment_rationale', self.parse_markdown_to_text(data.get('cs_investment_rationale', '')), 10),
+            ('cs_coporate_governance', self.parse_markdown_to_text(data.get('cs_coporate_governance', '')), 10),
+            ('cs_saarthi_framework', self.parse_markdown_to_text(data.get('cs_saarthi_framework', '')), 10),
+            ('cs_entry_review_exit_strategy', self.parse_markdown_to_text(data.get('cs_entry_review_exit_strategy', '')), 10),
+            ('cs_scenario_analysis', self.parse_markdown_to_text(data.get('cs_scenario_analysis', '')), 10),
+
             # === Scripts ===
             ('podcast_script', self.parse_markdown_to_text(data.get('podcast_script', '')), 11),
             ('video_script', self.parse_markdown_to_text(data.get('video_script', '')), 11),
