@@ -58,15 +58,15 @@ class PPTGenerator:
             'position': {'left': 5.10, 'top': 4.3, 'width': 4.8, 'height': 2.2}
         },
         'summary_table': {
-            'slide': 10,  # Slide 11 (Summary in Tables)
+            'slide': 13,  # Slide 14 (Summary in Tables)
             'position': {'left': 0.5, 'top': 0.75, 'width': 9.0, 'height': 4.5}
         },
         'chart_custom': {
-            'slide': 11,  # Slide 12 (Summary in Charts)
+            'slide': 14,  # Slide 15 (Summary in Charts)
             'position': {'left': 0.5, 'top': 0.75, 'width': 9.0, 'height': 4.5}
         },
         'price_chart': {
-             'slide': 10,  # Slide 11 (Top Right position based on {{prize_chart}})
+             'slide': 13,  # Slide 14
              'position': {'left': 5.5, 'top': 1.6, 'width': 4.3, 'height': 2.5}
         },
     }
@@ -1085,10 +1085,18 @@ class PPTGenerator:
 
             # === New Sections ===
             ('cs_investment_rationale', self.parse_markdown_to_text(data.get('cs_investment_rationale', '')), 10),
-            ('cs_coporate_governance', self.parse_markdown_to_text(data.get('cs_coporate_governance', '')), 10),
+            ('cs_corporate_governance', self.parse_markdown_to_text(data.get('cs_corporate_governance', '')), 10),
             ('cs_saarthi_framework', self.parse_markdown_to_text(data.get('cs_saarthi_framework', '')), 10),
             ('cs_entry_review_exit_strategy', self.parse_markdown_to_text(data.get('cs_entry_review_exit_strategy', '')), 10),
             ('cs_scenario_analysis', self.parse_markdown_to_text(data.get('cs_scenario_analysis', '')), 10),
+
+            # === New Metrics ===
+            ('rating', str(data.get('cs_rating', '')), 12),
+            ('target_price', str(data.get('cs_target_price', '')), 12),
+            ('upside_percentage', str(data.get('cs_upside_percentage', '')), 12),
+            ('market_cap', str(data.get('cs_market_cap', '')), 12),
+            ('market_cap_category', str(data.get('cs_market_cap_category', '')), 12),
+            ('current_market_price', str(data.get('cs_current_market_price', '')), 12),
 
             # === Scripts ===
             ('podcast_script', self.parse_markdown_to_text(data.get('podcast_script', '')), 11),
@@ -1184,7 +1192,7 @@ class PPTGenerator:
         fixed_images = {
             'chart_custom': { 
                 'url': data.get('chart_custom'), 
-                'slide': 10, # Slide 11 (Index 10)
+                'slide': 14, # Slide 15 (Index 14)
                 'pos': {'left': 0.5, 'top': 0.75, 'width': 9.0, 'height': 4.5} 
             },
             'price_chart_slide2': { 
@@ -1202,7 +1210,7 @@ class PPTGenerator:
             },
             'summary_table_slide10': { 
                 'url': data.get('summary_table'), 
-                'slide': 9, # Slide 10 (Index 9)
+                'slide': 13, # Slide 14 (Index 13)
                 # User provided crop pos (cm->inch, calculated):
                 # Left=1.52cm -> 0.60"
                 # Top=1.73cm -> 0.68"
