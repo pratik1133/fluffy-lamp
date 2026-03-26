@@ -62,7 +62,7 @@ class PPTGenerator:
             'position': {'left': 0.5, 'top': 0.75, 'width': 9.0, 'height': 4.5}
         },
         'chart_custom': {
-            'slide': 14,  # Slide 15 (Summary in Charts)
+            'slide': 12,  # Slide 13 (Summary in Charts)
             'position': {'left': 0.5, 'top': 0.75, 'width': 9.0, 'height': 4.5}
         },
         'price_chart': {
@@ -1192,7 +1192,7 @@ class PPTGenerator:
         fixed_images = {
             'chart_custom': { 
                 'url': data.get('chart_custom'), 
-                'slide': 14, # Slide 15 (Index 14)
+                'slide': 12, # Slide 13 (Index 12)
                 'pos': {'left': 0.5, 'top': 0.75, 'width': 9.0, 'height': 4.5} 
             },
             'price_chart_slide2': { 
